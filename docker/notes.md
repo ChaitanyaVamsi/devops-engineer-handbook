@@ -2,7 +2,7 @@
 
 ---
 
-# PART 1: DevOps-Focused Concepts
+# DAY 1: DevOps-Focused Concepts
 
 ---
 
