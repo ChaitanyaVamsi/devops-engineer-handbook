@@ -108,3 +108,71 @@ It automates:
 8. DEV → SIT → UAT → PROD
 9. L1, L2, L3 support model
 10. Docker is used for portability
+
+---
+
+# PART 2: Frequently Asked Interview Questions
+
+---
+
+## 1. What happens when you run `docker run nginx`?
+
+* Checks locally for image
+* If not found, pulls from Docker Hub
+* Creates container
+* Starts container
+
+---
+
+## 2. Why does systemctl not work inside a container?
+
+Containers:
+
+* Do not run full init system (systemd)
+* Do not control the host kernel
+* Should run a single foreground process
+
+---
+
+## 3. What happens if the CMD process stops?
+
+The container stops immediately.
+
+---
+
+## 4. Can we have multiple CMD instructions?
+
+Yes, but only the last CMD is executed.
+
+---
+
+## 5. Does EXPOSE open a port?
+
+No. It is only documentation.
+Port mapping is done using `-p`.
+
+---
+
+# Best Practices (Interview Important)
+
+* Use minimal base image
+* Use specific version tags (avoid latest in production)
+* Combine RUN commands to reduce layers
+* Use .dockerignore
+* Do not run containers as root in production
+* Keep containers stateless
+
+---
+
+# Quick Revision Summary
+
+* Image = Blueprint
+* Container = Running instance
+* docker run = pull + create + start
+* RUN = build time
+* CMD = run time
+* EXPOSE = documentation only
+* -p = port mapping
+* systemctl does not work inside container
+
+---
